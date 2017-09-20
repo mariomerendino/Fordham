@@ -1,0 +1,30 @@
+Script started on 2017-09-20 11:30:43-0400
+]0;merendino@storm:~/CISC3593[merendino@storm CISC3593]$ cat sizeOf.cpp 
+//Mario J. Merendino
+//Professor Trovato
+//Computer Org
+//Sept. 21, 2017
+//About: Prints size of int, float, short, long, char, and int*
+#include <iostream>
+using namespace std;
+
+int main(){
+    cout << "Printing Size in bytes of..." << endl;
+    cout << "\tInt: " << sizeof(int) << endl;
+    cout << "\tFloat: " << sizeof(float) << endl;
+    cout << "\tShort: " << sizeof(short) << endl;
+    cout << "\tLong: " << sizeof(long) << endl;
+    cout << "\tChar: " << sizeof(char) << endl;
+    cout << "\tPointer to an Int: " << sizeof(int*) << endl; 
+}]0;merendino@storm:~/CISC3593[merendino@storm CISC3593]$ ./a.out
+Printing Size in bytes of...
+	Int: 4
+	Float: 4
+	Short: 2
+	Long: 8
+	Char: 1
+	Pointer to an Int: 8
+]0;merendino@storm:~/CISC3593[merendino@storm CISC3593]$ exit
+exit
+
+Script done on 2017-09-20 11:31:05-0400

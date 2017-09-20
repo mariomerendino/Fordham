@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int array[10];
+    cout << "Enter data into array" << endl;
+    inputArray(array, 10);
+    displayArray(array, 10);
+}
+void selectionSort(){
+    
+}
+void displayArray(int a[], int size){
+    for (int i = 0; i < size; i++){
+        cout << a[i] <<  " ";
+    }
+    cout << endl;
+}
+void inputArray(int a[], int size){
+    for (int i = 0; i < size; i++){
+        cin >> a[i];
+    }
+}

@@ -1,0 +1,5 @@
+UnsortedType::UnsortedType()  // Class constructor
+{
+  length = 0;
+  listData = NULL;
+}

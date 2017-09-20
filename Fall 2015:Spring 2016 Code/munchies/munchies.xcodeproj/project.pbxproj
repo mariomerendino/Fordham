@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5CE908AC1D5C386900B1B8B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE908AB1D5C386900B1B8B7 /* AppDelegate.swift */; };
+		5CE908AE1D5C386900B1B8B7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CE908AD1D5C386900B1B8B7 /* GameScene.sks */; };
+		5CE908B01D5C386900B1B8B7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE908AF1D5C386900B1B8B7 /* GameScene.swift */; };
+		5CE908B21D5C386900B1B8B7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE908B11D5C386900B1B8B7 /* GameViewController.swift */; };
+		5CE908B51D5C386900B1B8B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE908B31D5C386900B1B8B7 /* Main.storyboard */; };
+		5CE908B71D5C386900B1B8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE908B61D5C386900B1B8B7 /* Assets.xcassets */; };
+		5CE908BA1D5C386900B1B8B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE908B81D5C386900B1B8B7 /* LaunchScreen.storyboard */; };
+		5CE908C51D5C386A00B1B8B7 /* munchiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE908C41D5C386A00B1B8B7 /* munchiesTests.swift */; };
+		5CE908D01D5C386A00B1B8B7 /* munchiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE908CF1D5C386A00B1B8B7 /* munchiesUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5CE908C11D5C386A00B1B8B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CE908A01D5C386900B1B8B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CE908A71D5C386900B1B8B7;
+			remoteInfo = munchies;
+		};
+		5CE908CC1D5C386A00B1B8B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CE908A01D5C386900B1B8B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CE908A71D5C386900B1B8B7;
+			remoteInfo = munchies;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5CE908A81D5C386900B1B8B7 /* munchies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = munchies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE908AB1D5C386900B1B8B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5CE908AD1D5C386900B1B8B7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		5CE908AF1D5C386900B1B8B7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		5CE908B11D5C386900B1B8B7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5CE908B41D5C386900B1B8B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5CE908B61D5C386900B1B8B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5CE908B91D5C386900B1B8B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5CE908BB1D5C386900B1B8B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CE908C01D5C386A00B1B8B7 /* munchiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = munchiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE908C41D5C386A00B1B8B7 /* munchiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = munchiesTests.swift; sourceTree = "<group>"; };
+		5CE908C61D5C386A00B1B8B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CE908CB1D5C386A00B1B8B7 /* munchiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = munchiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE908CF1D5C386A00B1B8B7 /* munchiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = munchiesUITests.swift; sourceTree = "<group>"; };
+		5CE908D11D5C386A00B1B8B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5CE908A51D5C386900B1B8B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE908BD1D5C386A00B1B8B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE908C81D5C386A00B1B8B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5CE9089F1D5C386900B1B8B7 = {
+			isa = PBXGroup;
+			children = (
+				5CE908AA1D5C386900B1B8B7 /* munchies */,
+				5CE908C31D5C386A00B1B8B7 /* munchiesTests */,
+				5CE908CE1D5C386A00B1B8B7 /* munchiesUITests */,
+				5CE908A91D5C386900B1B8B7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5CE908A91D5C386900B1B8B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CE908A81D5C386900B1B8B7 /* munchies.app */,
+				5CE908C01D5C386A00B1B8B7 /* munchiesTests.xctest */,
+				5CE908CB1D5C386A00B1B8B7 /* munchiesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CE908AA1D5C386900B1B8B7 /* munchies */ = {
+			isa = PBXGroup;
+			children = (
+				5CE908AB1D5C386900B1B8B7 /* AppDelegate.swift */,
+				5CE908AD1D5C386900B1B8B7 /* GameScene.sks */,
+				5CE908AF1D5C386900B1B8B7 /* GameScene.swift */,
+				5CE908B11D5C386900B1B8B7 /* GameViewController.swift */,
+				5CE908B31D5C386900B1B8B7 /* Main.storyboard */,
+				5CE908B61D5C386900B1B8B7 /* Assets.xcassets */,
+				5CE908B81D5C386900B1B8B7 /* LaunchScreen.storyboard */,
+				5CE908BB1D5C386900B1B8B7 /* Info.plist */,
+			);
+			path = munchies;
+			sourceTree = "<group>";
+		};
+		5CE908C31D5C386A00B1B8B7 /* munchiesTests */ = {
+			isa = PBXGroup;
+			children = (
+				5CE908C41D5C386A00B1B8B7 /* munchiesTests.swift */,
+				5CE908C61D5C386A00B1B8B7 /* Info.plist */,
+			);
+			path = munchiesTests;
+			sourceTree = "<group>";
+		};
+		5CE908CE1D5C386A00B1B8B7 /* munchiesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5CE908CF1D5C386A00B1B8B7 /* munchiesUITests.swift */,
+				5CE908D11D5C386A00B1B8B7 /* Info.plist */,
+			);
+			path = munchiesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5CE908A71D5C386900B1B8B7 /* munchies */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CE908D41D5C386A00B1B8B7 /* Build configuration list for PBXNativeTarget "munchies" */;
+			buildPhases = (
+				5CE908A41D5C386900B1B8B7 /* Sources */,
+				5CE908A51D5C386900B1B8B7 /* Frameworks */,
+				5CE908A61D5C386900B1B8B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = munchies;
+			productName = munchies;
+			productReference = 5CE908A81D5C386900B1B8B7 /* munchies.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5CE908BF1D5C386A00B1B8B7 /* munchiesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CE908D71D5C386A00B1B8B7 /* Build configuration list for PBXNativeTarget "munchiesTests" */;
+			buildPhases = (
+				5CE908BC1D5C386A00B1B8B7 /* Sources */,
+				5CE908BD1D5C386A00B1B8B7 /* Frameworks */,
+				5CE908BE1D5C386A00B1B8B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CE908C21D5C386A00B1B8B7 /* PBXTargetDependency */,
+			);
+			name = munchiesTests;
+			productName = munchiesTests;
+			productReference = 5CE908C01D5C386A00B1B8B7 /* munchiesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5CE908CA1D5C386A00B1B8B7 /* munchiesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CE908DA1D5C386A00B1B8B7 /* Build configuration list for PBXNativeTarget "munchiesUITests" */;
+			buildPhases = (
+				5CE908C71D5C386A00B1B8B7 /* Sources */,
+				5CE908C81D5C386A00B1B8B7 /* Frameworks */,
+				5CE908C91D5C386A00B1B8B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CE908CD1D5C386A00B1B8B7 /* PBXTargetDependency */,
+			);
+			name = munchiesUITests;
+			productName = munchiesUITests;
+			productReference = 5CE908CB1D5C386A00B1B8B7 /* munchiesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5CE908A01D5C386900B1B8B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Mario J Merendino";
+				TargetAttributes = {
+					5CE908A71D5C386900B1B8B7 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = V6LK4TJZ8V;
+					};
+					5CE908BF1D5C386A00B1B8B7 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = V6LK4TJZ8V;
+						TestTargetID = 5CE908A71D5C386900B1B8B7;
+					};
+					5CE908CA1D5C386A00B1B8B7 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = V6LK4TJZ8V;
+						TestTargetID = 5CE908A71D5C386900B1B8B7;
+					};
+				};
+			};
+			buildConfigurationList = 5CE908A31D5C386900B1B8B7 /* Build configuration list for PBXProject "munchies" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5CE9089F1D5C386900B1B8B7;
+			productRefGroup = 5CE908A91D5C386900B1B8B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5CE908A71D5C386900B1B8B7 /* munchies */,
+				5CE908BF1D5C386A00B1B8B7 /* munchiesTests */,
+				5CE908CA1D5C386A00B1B8B7 /* munchiesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CE908A61D5C386900B1B8B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE908AE1D5C386900B1B8B7 /* GameScene.sks in Resources */,
+				5CE908BA1D5C386900B1B8B7 /* LaunchScreen.storyboard in Resources */,
+				5CE908B71D5C386900B1B8B7 /* Assets.xcassets in Resources */,
+				5CE908B51D5C386900B1B8B7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE908BE1D5C386A00B1B8B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE908C91D5C386A00B1B8B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5CE908A41D5C386900B1B8B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE908B01D5C386900B1B8B7 /* GameScene.swift in Sources */,
+				5CE908B21D5C386900B1B8B7 /* GameViewController.swift in Sources */,
+				5CE908AC1D5C386900B1B8B7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE908BC1D5C386A00B1B8B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE908C51D5C386A00B1B8B7 /* munchiesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE908C71D5C386A00B1B8B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE908D01D5C386A00B1B8B7 /* munchiesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5CE908C21D5C386A00B1B8B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CE908A71D5C386900B1B8B7 /* munchies */;
+			targetProxy = 5CE908C11D5C386A00B1B8B7 /* PBXContainerItemProxy */;
+		};
+		5CE908CD1D5C386A00B1B8B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CE908A71D5C386900B1B8B7 /* munchies */;
+			targetProxy = 5CE908CC1D5C386A00B1B8B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5CE908B31D5C386900B1B8B7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CE908B41D5C386900B1B8B7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5CE908B81D5C386900B1B8B7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CE908B91D5C386900B1B8B7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5CE908D21D5C386A00B1B8B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5CE908D31D5C386A00B1B8B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5CE908D51D5C386A00B1B8B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = munchies/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mario.munchies;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5CE908D61D5C386A00B1B8B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = munchies/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mario.munchies;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5CE908D81D5C386A00B1B8B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = munchiesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mario.munchiesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/munchies.app/munchies";
+			};
+			name = Debug;
+		};
+		5CE908D91D5C386A00B1B8B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = munchiesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mario.munchiesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/munchies.app/munchies";
+			};
+			name = Release;
+		};
+		5CE908DB1D5C386A00B1B8B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = munchiesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mario.munchiesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = munchies;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		5CE908DC1D5C386A00B1B8B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = munchiesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mario.munchiesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = munchies;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CE908A31D5C386900B1B8B7 /* Build configuration list for PBXProject "munchies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE908D21D5C386A00B1B8B7 /* Debug */,
+				5CE908D31D5C386A00B1B8B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CE908D41D5C386A00B1B8B7 /* Build configuration list for PBXNativeTarget "munchies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE908D51D5C386A00B1B8B7 /* Debug */,
+				5CE908D61D5C386A00B1B8B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5CE908D71D5C386A00B1B8B7 /* Build configuration list for PBXNativeTarget "munchiesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE908D81D5C386A00B1B8B7 /* Debug */,
+				5CE908D91D5C386A00B1B8B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5CE908DA1D5C386A00B1B8B7 /* Build configuration list for PBXNativeTarget "munchiesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE908DB1D5C386A00B1B8B7 /* Debug */,
+				5CE908DC1D5C386A00B1B8B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5CE908A01D5C386900B1B8B7 /* Project object */;
+}

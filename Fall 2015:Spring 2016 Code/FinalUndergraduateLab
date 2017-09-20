@@ -1,0 +1,1022 @@
+Script started on Sun 11 Oct 2015 08:03:36 PM EDT
+]0;merendino@storm:~/CISC2000/Lab2/Assignment1[merendino@storm Assignment1]$ pwe[Kd
+/home/students/merendino/CISC2000/Lab2/Assignment1
+]0;merendino@storm:~/CISC2000/Lab2/Assignment1[merendino@storm Assignment1]$ vi[K[Kpwdscript FinalUndergradLab[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kvi Assignment1.cppg++ Assignment1.cpp course.cpp phone.cpp date.cpp name.cpp program.cpp[Kp[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd /home/students/merendino/CISC2000/Lab2/Assignment1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K[1Ppwd./a.outg++ Assignment1.cpp course.cpp phone.cpp date.cpp name.cpp program.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat name.h name.cpp phone.h phone.cpp date.h date.cpp program.h program.cpp course.h course.cpp Assignment1.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./a.out[Kcat name.h name.cpp phone.h phone.cpp date.h date.cpp program.h program.cpp course.h course.cpp Assignment1.cpp
+#ifndef NAME_H
+#define NAME_H
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class Name{
+
+public: 
+     Name();//default constructor
+     Name(string, char, string);//other constructor
+     void input();//input
+     void display();//display
+     void setfname(string f);//Mutators
+     void setlname(string l);
+     void setmi(char m);
+     string getfname();//Accessors
+     string getlname();
+     char getmi();
+private: 
+     string fname, lname;
+     char mi; 
+};
+#endif 
+#include "name.h" 
+
+Name::Name(){//Default Constructor
+    fname = "Johnny"; 
+    mi = 'A'; 
+    lname = "AppleSeed"; 
+}
+
+void Name::display(){ //Display function
+    cout << "Name: " << getfname() << " " << getmi() << " " << getlname() <<endl;
+}
+void Name::input(){ //input function
+    cout << "Enter First name: ";
+    cin >> fname;
+    cout << "Enter Middle Initial: "; 
+    cin >> mi;
+    cout << "Enter Last name: "; 
+    cin >> lname;
+}
+void Name::setfname(string f){ //Mutator for fname
+    f = fname;
+}
+string Name::getfname(){//accessor for fname
+   return(fname);
+}
+void Name::setlname(string l){//mutator for lname
+    lname = l;
+}
+string Name::getlname(){//accessor for lame
+   return(lname);
+}
+char Name::getmi(){//accessor for mi
+   return(mi);
+}
+void Name::setmi(char m){//mutators for mi
+    m=mi;
+}
+/*Takes in a phone number and outputs it
+ *Creates the Object Phone
+ *
+ *
+ */
+
+
+#ifndef PHONE_H
+#define PHONE_H
+#include <iostream>
+using namespace std;
+
+class Phone{ //Creates phoneclass
+
+public://PROTOTYPES
+    Phone();//Default constructor
+    Phone(int,int,int,int);//constructor
+    void input();//Inputfunction
+    void display();//Display function
+    void setphone(int,int,int);//Mutator for whole phone
+    int getarea();//ACCESSORS
+    int getexchange();
+    int getline();
+    int getmaxtexts();
+    void setarea(int a);//MUTATORS
+    void setexchange(int e);
+    void setline(int l);
+    void setmaxtexts(int m);
+
+private://Data types
+    int area, exchange, line, maxtexts;
+};
+#endif
+
+#include "phone.h"
+
+Phone::Phone(){  //Default Constructor
+    area=718;
+    line=817;
+    exchange=1000;
+    maxtexts=10;
+}
+Phone::Phone(int a,int l,int e,int m){ //constructor for filling in at declaration of obj
+    area=a;
+    line=l;
+    exchange=e;
+    maxtexts=m;
+}
+void Phone::display(){ //Outputs phone number
+    cout << "Phone Number: (" << getarea() << ") " << getline() << "-" << getexchange() << endl;
+}
+void Phone::input(){//Input data for phone 
+    cout << "Enter the Area Code: \n"; 
+    cin >> area;
+    if (area > 999 || area < 100)  //checks if area code has 3 digits
+    {
+    while(area > 999 || area <100){ //if not it loops until it is
+    cout << "Enter a valid area code: \n";
+    cin >> area;
+    setarea(area);
+    }}
+    cout << "Enter the Line: \n"; 
+    cin >> line;
+    if (line > 999 || line < 100) //checks if line has 3 digits
+    {
+    while(line > 999 || line <100){ //if not it loops
+    cout << "Enter a valid line code: \n";
+    cin >> line;
+    setline(line);
+    }}
+    cout << "Enter the Exhange: \n"; 
+    cin >> exchange;
+    if (exchange > 9999 || exchange < 1000) //checks if excahnge has 4 digits
+    {
+    while(exchange > 9999 || exchange <1000){ //if not it loops
+    cout << "Enter a valid exchange code: \n";
+    cin >> exchange;
+    setexchange(exchange);
+    }}
+}
+void Phone::setphone(int a, int l, int e) //mutator for whole phone number
+{
+   area=a;
+   line=l;
+   exchange=e;
+}
+int Phone::getarea(){ //ACCESSORS FOR ALL PARTS OF PHONE
+   return(area);
+}
+int Phone::getexchange(){
+   return(exchange);
+}
+int Phone::getline(){
+   return(line);
+}
+int Phone::getmaxtexts(){
+   return(maxtexts);
+}
+void Phone::setarea(int a){//MUTATORS
+   a= area;
+}
+void Phone::setexchange(int e){
+   e=exchange;
+}
+void Phone::setline(int l){
+   l=line;
+}
+void Phone::setmaxtexts(int m){//Unusable
+   m=maxtexts;
+}
+#ifndef DATE_H
+#define DATE_H
+#include <iostream>
+using namespace std;
+
+class Date{
+
+public://prototypes
+    Date();//default constructor
+    Date(int,int,int);
+    void input();//input funct
+    void display();//display funct
+    void setDate(int,int,int);
+    int getmonth();//accessors
+    int getday();
+    int getyear();
+
+private:
+    int mm,dd,yy; 
+};
+#endif 
+#include "date.h"
+
+Date::Date(){ //default constructor
+    mm=1;
+    dd=1;
+    yy=1900;
+}
+Date::Date(int m, int d, int y){//other cosntructor
+    mm=m;
+    dd=d;
+    yy=y;
+}
+void Date::display(){ //displays function
+     cout <<mm << getmonth() << getday() << "/" << getyear() << endl;
+}
+void Date::input(){ //inputs month day year
+    int m,d,y;
+    cout << "Enter date as mm, dd, yyyy";
+    cin >> m >> d >> y;
+    if (m > 12 || m < 1)//checks if month is correct
+    {
+    while(m > 12 || m <1){
+    cout << "Enter a valid month: \n";
+    cin >> m;
+    }}
+    if (d > 31 || d < 1) // checks if day is correct
+    {
+    while(d > 31 || d <1){
+    cout << "Enter a valid day: \n";
+    cin >> d;
+    }}
+    setDate(m,d,y);
+}
+void Date::setDate(int m, int d, int y) //mutator for whole date
+{
+   mm=m;
+   dd=d;
+   yy=y;
+}
+int Date::getmonth(){ //ACCESSORS
+   return(mm);
+}
+int Date::getday(){
+   return(dd);
+}
+int Date::getyear(){
+   return(yy);
+}
+#ifndef PROGRAM_H
+#define PROGRAM_H
+
+#include <iostream>
+using namespace std;
+
+class Program {
+public:
+      Program();// CONSTRUCTORS
+      Program(string, string, string, string); 
+
+      void input();//Input method
+      void display();//display method
+      void setcampus(string c);//mutator for campus
+      string getcampus();//acessor for campus
+      void setdegree(string d);//mutator for degree
+      string getdegree();//acessor for degree
+      void setmajor(string ma);//mutator for major
+      string getmajor();//accessor for major
+      void setminor(string mi);//mutator for minor
+      string getminor();//accessor for minor
+private: 
+      string campus, degree, major, minor;
+};
+
+#endif
+#include <iostream>
+#include "program.h"
+
+Program::Program() {//Default constructors
+       campus="RoseHill";
+       degree="BS";
+       major="CompSci";
+       minor="Buisness";
+}
+Program::Program(string c, string d, string ma, string mi){//other constructor
+       campus=c;
+       degree=d;
+       major=ma;
+       minor=mi;
+}
+void Program::display(){//display method
+       cout << "Campus: "<< getcampus() <<endl;
+       cout << "Degree: "<< getdegree() <<endl;
+       cout << "Major: "<< getmajor() <<endl;
+       cout << "Minor: "<< getminor() <<endl;
+}
+
+string Program::getcampus(){//ACESSOR METHODS
+       return(campus);
+}
+string Program::getdegree(){
+       return(degree);
+}
+string Program::getmajor(){
+       return(major);
+}
+string Program::getminor(){
+       return(minor);
+}
+void Program::input(){ //Input methods
+        int ans1, ans2;
+        cout << "Enter Your Campus\n1.RoseHill 2.Lincoln Center: ";
+        cin >> ans1; 
+        switch(ans1){
+        case 1: 
+        campus= "RoseHill";
+        case 2:
+        campus= "LincolnCenter";
+        default:
+        campus= "RoseHill";
+        }
+        cout << "Enter Your Degree\n1.BS 2.BA: ";
+        cin >> ans2;
+        switch(ans2){
+        case 1:
+        degree= "BS";
+        case 2:
+        degree= "BA";
+        default:
+        degree= "BA";
+        }
+        cout << "Enter Your Major:" << endl;
+        cin >> major;
+        cout << "Enter Your Minor (if none, enter 0):"<< endl;
+        cin >> minor;
+        if (minor == "0")
+        { 
+            minor = "NONE";
+        } 
+}
+void Program::setcampus(string c) //MUTATOR METHODS
+{
+     cin >> c;
+     campus=c;
+}
+void Program::setdegree(string d)
+{
+     cin >> d;
+     degree=d;
+}
+void Program::setmajor(string ma)
+{
+     cin >> ma;
+     major= ma;
+}
+void Program::setminor(string mi)
+{
+     cin >> mi;
+     major= mi;
+}
+
+#ifndef COURSE_H
+#define COURSE_H
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class Course{ //Creates Course Class
+
+public:
+    Course();//Default constructor
+    Course(string, string, string, string, int);//other constructor
+    void input();//input method
+    void display();//display method
+    void setcname(string coursename);//sets course name(MUTATOR)
+    void setcid(string id);//sets course id (MUTATOR)
+    void setprof(string professor);//sets professor(MUTATOR)
+    void setgrade(string g);//sets grade(MUTATOR)
+    void setcredits(int c);//sets credits(MUTATOR)
+    string getcname();//accessor for cname
+    string getcid();//accessor for cid
+    string getprof();//accessor for professor
+    string getgrade();//accessor for grade
+    int getcredits();//accessor for credits
+
+private:
+    string cid, cname, prof, grade;
+    int credits;
+};
+#endif
+
+#include<iostream> 
+#include "course.h"
+
+Course::Course(){ //Default constructor
+     cname= "Computer Science II";
+     cid= "CISC2000";
+     prof= "Papadakis";
+     grade= "A";
+     credits= 3;
+}
+Course::Course(string coursename, string id, string g, string professor, int c){ //other constructor 
+     coursename=cname;
+     cid=id;
+     grade=g;
+     prof=professor;
+     c=credits;
+}
+void Course::input(){ //input methods
+     cout << "Enter the Course Name: \n";
+     cin >> cname;
+     cout << "Enter Course Identification Number: \n";
+     cin >> cid;
+     cout << "Enter Professors name: \n";
+     cin >> prof;
+     cout << "Enter the amount of credits the course is worth: \n";
+     cin >> credits;
+     cout << "Enter The Grade Recieved (A, A-, B, B-....) : \n";
+     cin >> grade;
+
+}
+void Course::display(){ //display methods
+     cout << "Course: " << getcname() << endl;
+     cout << "Course ID: " << getcid() << endl;
+     cout << "Professor: " << getprof() << endl;
+     cout << "Grade: " << getgrade() << endl;
+     cout << "Credits: "<< getcredits() << endl;
+}
+void Course::setcname(string coursename){ //MUTATORS
+     cname=coursename;
+}
+void Course::setcid(string id){
+     cid=id;
+}
+void Course::setprof(string professor){
+     prof=professor;
+}
+void Course::setgrade(string g){
+     grade=g;
+}
+void Course::setcredits(int c){
+     credits=c;
+}
+string Course::getcname(){ //ACCESSORS
+     return(cname);
+}
+string Course::getcid(){
+     return(cid);
+}
+string Course::getprof(){
+     return(prof);
+}
+string Course::getgrade(){
+     return(grade);
+}
+int Course::getcredits(){
+     return(credits);
+}
+/* Author: Mario Merendino
+ * Professor Papadakis
+ * CS2000
+ * Desc: Allows a user to input all the information about 
+ * Last Modified: Sept 26, 2015
+ */
+#include <iostream>
+#include <string.h>
+#include "program.h"
+#include "name.h"
+#include "date.h"
+#include "course.h"
+#include "phone.h"
+using namespace std;
+
+class Undergraduate {
+    
+public: //Methods
+    
+    Undergraduate(){ //DEFAULT CONSTRUCTOR
+        gender= 'M';
+        studentid= "A12";
+        status="Active";
+        gterm="Spring";
+        credits= 14;
+        pref= "Homephone";
+        gpa= 4.0;
+    }    
+    void input(){ //INPUT METHOD
+        int y=1;
+        cout << "\n---- Please Input Student Information ---- \n";
+        sname.input();
+        cout << "Birthday :" <<endl;
+        dob.input();
+        sprogram.input(); 
+        cout << "---Input Current Courses---\n"; //RUNS THR COURSE INPUT FOR 5 CLASSES
+        for(int x=0; x < 10; x++){
+        cout << "--Class " << y << " -- " << endl;
+        y++; 
+        scourse[x].input();
+        }
+        cout << "Enter HomePhone: \n";
+        hphone.input();
+        cout << "Enter CellPhone: \n";
+        cphone.input();
+        inputgender();//set gender
+        inputstudentid();//set Students id
+        inputstatus();//Sets Students current status
+        inputgterm();//sets Students grad year
+        inputcredits();//sets the amt of credits
+        inputgpa();//sets Gpa  
+        inputpref();//sets preference
+
+    }
+    void display(){ //DISPLAY METHOD
+        int y=1;
+        cout << "\n ---- Student Information ---- \n+------------------------------+\n";
+        sname.display();
+        cout << "Birthday: ";
+        dob.display();
+        sprogram.display();
+         cout << "--- Current Courses---\n";
+        for(int x=0; x < 10; x++){
+        cout << "--Class " << y << " -- " << endl;
+        y++; 
+        scourse[x].display();
+        }
+        cout << "==================\n"; 
+        cout << "HomePhone: ";
+        hphone.display();
+        cout << "CellPhone: ";
+        cphone.display();
+        cout << "Gender: " << getgender() << endl;// Display gender
+        cout << "Student ID is: " << getstudentid() << endl;//Display ID
+        cout << "Current Status of Student is: " << getstatus() << endl;//Display Status
+        cout << "Student is expected to Graduate in the  "<< getgterm() <<  endl;//Display GradYear
+        cout << "Number of credits earned: " << getcredits() << endl;//displays credits
+        cout << "GPA of student: " << getgpa() << endl;//Display GPA
+        cout << "Preferred Phone: " << getpref() << endl;//display preference
+    }
+    void inputgender() { //Prompts user to enterthe Students gender
+        int choice;
+        cout << "Select a gender: " << endl;
+        cout << "1. Male" << "\n2. Female\n";
+        cin >> choice;
+        switch(choice){
+            case 1:
+                setgender('M');
+                break;
+            case 2:
+                setgender('F');
+                break;
+         }
+    }
+    void setgender(char sex){ //mutator for gender
+        gender = sex;
+    }
+    char getgender(){ //Accessor for Gender
+        return gender;
+    }
+    void inputstudentid() { //Sets the Students ID number
+        cout << "Enter Student ID: " << endl;
+        cin >> studentid;
+        setstudentid(studentid);
+    }
+    void setstudentid(string sid) { //Mutator for student ID
+        studentid = sid;
+    }
+    string getstudentid() { //Accessor for Students Id
+        return studentid;
+    }
+    void inputstatus() { //Prompts user to enter students status as a student
+        int choice;
+        cout << "Is the Student: "<< endl;
+        cout << "1. Active\n" << "2. Graduated\n" << "3. Withdrawn\n" << "4. Sabatical" <<endl;
+        cin >> choice;
+        switch (choice){
+            case 1:
+                setstatus("Active");
+                break;
+            case 2:
+                setstatus("Graduated");
+                break;
+            case 3:
+                setstatus("Withdrawn");
+                break;
+            case 4:
+                setstatus("Sabatical");
+                break;
+        }
+    }
+    void setstatus(string s){ //Mutator for Status
+        status = s;
+    }
+    string getstatus(){ //Accessor for Status
+        return status;
+    }
+    
+    void inputgterm() { //Prompts user to set Theyre expected grad term
+        int choice;
+        cout << "Enter Expected Graduation Term: " << endl;
+        cout << "1. Fall\n" << "2. Spring\n";
+        cin >> choice;
+        switch (choice){
+            case 1:
+                setgterm("Fall");
+                break;
+                
+            case 2:
+                setgterm("Spring");
+                break;
+        }
+    }
+    void setgterm(string g){//Mutator for grad term
+        gterm = g;
+    }
+    string getgterm() { //Accessor for grad term
+        return gterm;
+    }
+    void inputcredits() { //Prompts user to enter the number of credits earned
+        cout << "Enter the total number of credits earned by the end of last semester: " << endl;
+        cin >> credits;
+        setcredits(credits);
+    }
+    void setcredits(int creds){ //Mutator for credits
+        credits = creds;
+    }
+    int getcredits(){ //Accessor for credits
+        return credits;
+    }
+    void inputgpa() { //Prompts user to enter gpa
+        cout << "Enter the students gpa: " << endl;
+        cin >> gpa;
+        if (gpa > 4.0|| gpa < 0.1){
+        while(gpa >4.0||gpa <0.1){
+        cout << "Enter a real GPA";
+        cin >> gpa;
+        }}
+        setgpa(gpa);
+    }
+    void setgpa(double avg){ //Mutator for gpa
+        gpa = avg;
+    }
+    double getgpa(){//Accessor for gpa
+        return gpa;
+    }
+    void inputpref() {//prompts user to enter prefered number
+        int choice ;
+        cout << "Enter preferred phone: " << endl;
+        cout << "1. Cell Phone" << endl << "2. Home Phone";
+        cin >> choice;
+        switch (choice){
+            case 1:
+                setpref("Cellphone");
+                break;
+            case 2:
+                setpref("HomePhone");
+                break;
+        }
+    }
+    void setpref(string p) {//mutator for pref number
+        pref = p;
+    }
+    string getpref() { //accessor for pref number
+        return pref;
+    }
+    
+    
+    
+    
+private: //data types
+    string studentid, status, gterm, pref;
+    double gpa;
+    char gender;
+    int credits;
+    Date dob;
+    Name sname;
+    Program sprogram;
+    Course scourse[10];
+    Phone cphone, hphone;
+};
+
+
+int main() { //Driver
+    Undergraduate s1;
+    s1.display();
+    s1.input();
+    s1.display();
+}
+
+]0;merendino@storm:~/CISC2000/Lab2/Assignment1[merendino@storm Assignment1]$ cat name.h name.cpp phone.h phone.cpp date.h date.cpp program.h program.cpp course.h course.cpp Assignment1.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpwd[K[Kvi Assignment1.cppg++ Assignment1.cpcd /home/students/merendino/CISC2000/Lab2/Assignment1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K[1Ppwd./a.outg++ Assignment1.cpp course.cpp phone.cpp date.cpp name.cpp program.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat name.h name.cpp phone.h phone.cpp date.h date.cpp program.h program.cpp course.h course.cpp Assignment1.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[41Pg++ Assignment1.cpp course.cpp phone.cpp date.cpp name.cpp program.cpp
+]0;merendino@storm:~/CISC2000/Lab2/Assignment1[merendino@storm Assignment1]$ ./a.out
+
+ ---- Student Information ---- 
++------------------------------+
+Name: Johnny A AppleSeed
+Birthday: 111/1900
+Campus: RoseHill
+Degree: BS
+Major: CompSci
+Minor: Buisness
+--- Current Courses---
+--Class 1 -- 
+Course: Computer Science II
+Course ID: CISC2000
+Professor: Papadakis
+Grade: A
+Credits: 3
+--Class 2 -- 
+Course: Computer Science II
+Course ID: CISC2000
+Professor: Papadakis
+Grade: A
+Credits: 3
+--Class 3 -- 
+Course: Computer Science II
+Course ID: CISC2000
+Professor: Papadakis
+Grade: A
+Credits: 3
+--Class 4 -- 
+Course: Computer Science II
+Course ID: CISC2000
+Professor: Papadakis
+Grade: A
+Credits: 3
+--Class 5 -- 
+Course: Computer Science II
+Course ID: CISC2000
+Professor: Papadakis
+Grade: A
+Credits: 3
+--Class 6 -- 
+Course: Computer Science II
+Course ID: CISC2000
+Professor: Papadakis
+Grade: A
+Credits: 3
+--Class 7 -- 
+Course: Computer Science II
+Course ID: CISC2000
+Professor: Papadakis
+Grade: A
+Credits: 3
+--Class 8 -- 
+Course: Computer Science II
+Course ID: CISC2000
+Professor: Papadakis
+Grade: A
+Credits: 3
+--Class 9 -- 
+Course: Computer Science II
+Course ID: CISC2000
+Professor: Papadakis
+Grade: A
+Credits: 3
+--Class 10 -- 
+Course: Computer Science II
+Course ID: CISC2000
+Professor: Papadakis
+Grade: A
+Credits: 3
+==================
+HomePhone: Phone Number: (718) 817-1000
+CellPhone: Phone Number: (718) 817-1000
+Gender: M
+Student ID is: A12
+Current Status of Student is: Active
+Student is expected to Graduate in the  Spring
+Number of credits earned: 14
+GPA of student: 4
+Preferred Phone: Homephone
+
+---- Please Input Student Information ---- 
+Enter First name: Mar   Mario
+Enter Middle Initial: J
+Enter Last name: Merendino
+Birthday :
+Enter date as mm, dd, yyyy01
+201 
+1996
+Enter Your Campus
+1.RoseHill 2.Lincoln Center: 1
+Enter Your Degree
+1.BS 2.BA: 1
+Enter Your Major:
+M COm  omps Sci
+Enter Your Minor (if none, enter 0):
+0
+---Input Current Courses---
+--Class 1 -- 
+Enter the Course Name: 
+MIc  icro
+Enter Course Identification Number: 
+E 210   1000
+Enter Professors name: 
+f David
+Enter the amount of credits the course is worth: 
+3
+Enter The Grade Recieved (A, A-, B, B-....) : 
+A
+--Class 2 -- 
+Enter the Course Name: 
+Mi  Calc1 I
+Enter Course Identification Number: 
+15000 
+Enter Professors name: 
+Kim   Julie
+Enter the amount of credits the course is worth: 
+4
+Enter The Grade Recieved (A, A-, B, B-....) : 
+A
+--Class 3 -- 
+Enter the Course Name: 
+It  CompI
+Enter Course Identification Number: 
+1000
+Enter Professors name: 
+Bolker
+Enter the amount of credits the course is worth: 
+3
+Enter The Grade Recieved (A, A-, B, B-....) : 
+B
+--Class 4 -- 
+Enter the Course Name: 
+Physci  i ics
+Enter Course Identification Number: 
+1000
+Enter Professors name: 
+V AUb  ubin
+Enter the amount of credits the course is worth: 
+01  4
+Enter The Grade Recieved (A, A-, B, B-....) : 
+B
+--Class 5 -- 
+Enter the Course Name: 
+Theolgoy   ogy
+Enter Course Identification Number: 
+1000
+Enter Professors name: 
+Lewis
+Enter the amount of credits the course is worth: 
+3
+Enter The Grade Recieved (A, A-, B, B-....) : 
+A
+--Class 6 -- 
+Enter the Course Name: 
+CompS  pSci II   II
+Enter Course Identification Number: 
+21 000
+Enter Professors name: 
+Papadakis
+Enter the amount of credits the course is worth: 
+3 4
+Enter The Grade Recieved (A, A-, B, B-....) : 
+A
+--Class 7 -- 
+Enter the Course Name: 
+C DA iscreteStructures
+Enter Course Identification Number: 
+I 2100
+Enter Professors name: 
+C Xhang
+Enter the amount of credits the course is worth: 
+3
+Enter The Grade Recieved (A, A-, B, B-....) : 
+A
+--Class 8 -- 
+Enter the Course Name: 
+Ps hilosophy 2001     
+Enter Course Identification Number: 
+2 10000 
+Enter Professors name: 
+d Alex  
+Enter the amount of credits the course is worth: 
+01  3
+Enter The Grade Recieved (A, A-, B, B-....) : 
+A
+--Class 9 -- 
+Enter the Course Name: 
+a Ita a   Te he  exts
+Enter Course Identification Number: 
+3 2000
+Enter Professors name: 
+A xh  kim   Kim
+Enter the amount of credits the course is worth: 
+3
+Enter The Grade Recieved (A, A-, B, B-....) : 
+A
+--Class 10 -- 
+Enter the Course Name: 
+Sacred  Tes xts
+Enter Course Identification Number: 
+32  34 252
+Enter Professors name: 
+Davis
+Enter the amount of credits the course is worth: 
+3
+Enter The Grade Recieved (A, A-, B, B-....) : 
+A
+Enter HomePhone: 
+Enter the Area Code: 
+631
+Enter the Line: 
+31444
+Enter a valid line code: 
+315
+Enter the Exhange: 
+12333333
+Enter a valid exchange code: 
+1233 4
+Enter CellPhone: 
+Enter the Area Code: 
+31 222222
+Enter a valid area code: 
+321
+Enter the Line: 
+654
+Enter the Exhange: 
+0987
+Enter a valid exchange code: 
+9876
+Select a gender: 
+1. Male
+2. Female
+2
+Enter Student ID: 
+A12345t6  6789 
+Is the Student: 
+1. Active
+2. Graduated
+3. Withdrawn
+4. Sabatical
+1
+Enter Expected Graduation Term: 
+1. Fall
+2. Spring
+1
+Enter the total number of credits earned by the end of last semester: 
+13
+Enter the students gpa: 
+$.  3 4.0
+Enter preferred phone: 
+1. Cell Phone
+2. Home Phone1
+
+ ---- Student Information ---- 
++------------------------------+
+Name: Mario J Merendino
+Birthday: 1120/1996
+Campus: RoseHill
+Degree: BA
+Major: CompSci
+Minor: NONE
+--- Current Courses---
+--Class 1 -- 
+Course: Micro
+Course ID: 1000
+Professor: David
+Grade: A
+Credits: 3
+--Class 2 -- 
+Course: CalcI
+Course ID: 1500
+Professor: Julie
+Grade: A
+Credits: 4
+--Class 3 -- 
+Course: CompI
+Course ID: 1000
+Professor: Bolker
+Grade: B
+Credits: 3
+--Class 4 -- 
+Course: Physics
+Course ID: 1000
+Professor: Aubin
+Grade: B
+Credits: 4
+--Class 5 -- 
+Course: Theology
+Course ID: 1000
+Professor: Lewis
+Grade: A
+Credits: 3
+--Class 6 -- 
+Course: CompSciII
+Course ID: 2000
+Professor: Papadakis
+Grade: A
+Credits: 4
+--Class 7 -- 
+Course: DiscreteStructures
+Course ID: 2100
+Professor: Xhang
+Grade: A
+Credits: 3
+--Class 8 -- 
+Course: Philosophy
+Course ID: 1000
+Professor: Alex
+Grade: A
+Credits: 3
+--Class 9 -- 
+Course: Texts
+Course ID: 2000
+Professor: Kim
+Grade: A
+Credits: 3
+--Class 10 -- 
+Course: SacredTexts
+Course ID: 3252
+Professor: Davis
+Grade: A
+Credits: 3
+==================
+HomePhone: Phone Number: (631) 315-1234
+CellPhone: Phone Number: (321) 654-9876
+Gender: F
+Student ID is: A12345678
+Current Status of Student is: Active
+Student is expected to Graduate in the  Fall
+Number of credits earned: 13
+GPA of student: 4
+Preferred Phone: Cellphone
+]0;merendino@storm:~/CISC2000/Lab2/Assignment1[merendino@storm Assignment1]$ ./a.outg++ Assignment1.cpp course.cpp phone.cpp date.cpp name.cpp program.cpp[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kexit
+exit
+
+Script done on Sun 11 Oct 2015 08:11:13 PM EDT

@@ -1,0 +1,19 @@
+Exercises
+
+1. Demo the compilation, go through File I/O, 
+   the idea of test driver file and test case file 
+
+2. Practice to write your own simple main function that allows user to enter 
+  positive integers, and use -1 to end. Store these numbers into unsorted list of int. 
+   
+   * Change the MAX_SIZE to 20  (It's defined in ItemType.h) 
+
+3. In the main() (driver file), write a function that returns the largest number from the 
+  unsorted list
+
+4. Extends the unsorted list to include two member functions:
+   1) one to find the largest items in the list
+   2) another to sort the list in ascending order (use selection sort) 
+
+5. Use the unsorted list to rewrite your lab2 
+

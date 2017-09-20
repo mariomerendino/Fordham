@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pages/PlayViewController.swift"
+            timestampString = "473399676.619845"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "PlayViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pages.PlayViewController.__deallocating_deinit"
+                  moduleName = "pages"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mariomerendino/Desktop/Code/pages/pages/PlayViewController.swift"
+                  timestampString = "473399676.622643"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pages.PlayViewController.init (pages.PlayViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; pages.PlayViewController"
+                  moduleName = "pages"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mariomerendino/Desktop/Code/pages/pages/PlayViewController.swift"
+                  timestampString = "473399676.622868"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pages.PlayViewController.init (pages.PlayViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;pages.PlayViewController&gt;"
+                  moduleName = "pages"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mariomerendino/Desktop/Code/pages/pages/PlayViewController.swift"
+                  timestampString = "473399676.622995"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -1,0 +1,419 @@
+Script started on Wed 02 Dec 2015 08:20:24 PM EST
+]0;merendino@storm:~/CISC2000/template[merendino@storm template]$ pwd
+/home/students/merendino/CISC2000/template
+]0;merendino@storm:~/CISC2000/template[merendino@storm template]$ cat main.cpp
+#include "set.h"
+using namespace std;
+int main(){
+    char add, rm;
+    Set<char> c1, c2, c3;
+    Set<string>s1;
+    cin >> c1;
+    cin >> c2;
+    cout << "Set 1: " << c1;
+    cout << "Set 2: " << c2;
+    c3=c1+c2;
+    cout << "Union: " << c3;
+    c3=c1^c2;
+    cout << "Intersection: " << c3;
+    c3=c1-c2;
+    cout << "Difference (Set 1 - Set 2) " << c3;
+    cout << "Add one interger to Set 1: ";
+    cin >> add;
+    c3= c1+add;
+    cout << "Set 1: " << c3;
+    cout <<"Input a set of Strings"<<endl;
+    cin >> s1;
+    cout << "Set of strings" << s1;
+}
+]0;merendino@storm:~/CISC2000/template[merendino@storm template]$ cat main.cpp[K[K[K[K[K[K[K[Kset.h set.cpp
+//  Author: Mario Merendino
+//  Professor Papadakis;
+//  Lab4
+//  Creates an Object named set, and compares the values in each obj.
+//  Last Modified: 11/12/15.
+
+#ifndef __Lab4__set__
+#define __Lab4__set__
+
+#include <stdio.h>
+#include <iostream>
+#include <cstdlib>
+#include <string.h>
+
+using std::string;
+using namespace std;
+template <class T>
+class Set{
+    friend ostream &operator<<( ostream &os, Set& a ){
+        a.display(os);
+        return(os);
+    }
+    friend istream &operator>>( istream &os, Set& a){
+        a.input(os);
+        return(os);
+    }
+public:
+    Set(int=DEFAULTSIZE);
+    //Set(Set &, int);
+    ~Set();
+    void setsentinal();
+    void setivar();
+    bool element(T);
+    void display(ostream &);
+    void input(istream &);
+    Set<T> Union(Set);
+    Set<T> Intersection(Set);
+    Set<T> Difference(Set);
+    Set<T> addelement(T);
+    Set<T> delelement(T);
+    Set<T> operator+(Set);
+    Set<T> operator-(Set);
+    Set<T> operator^(Set);
+    Set<T> operator+(T);
+    Set<T> operator-(T);
+    bool operator==(Set);
+private:
+    T *set;
+    T sentinal;
+    T ivar;
+    int fillsize, psize, lsize;
+    static const int DEFAULTSIZE= 10;
+
+};
+#include "set.cpp"
+#endif
+//
+//  set.h
+//  template test
+//
+//  Created by Mario J Merendino on 11/27/15.
+//  Copyright (c) 2015 Mario J Merendino. All rights reserved.
+//
+
+
+template <class T>
+Set<T>::Set( int s ) {//DEFAULT CONSTRUCTOR
+    if ( s > 0 )//if user initializes psize in parenthesis
+        psize = s;
+    else
+        psize = DEFAULTSIZE;// otherwise use default value
+    // Allocate an array of the specified size
+    set = new T[psize];//DYNAMIC MEMORY ALLOCATION
+    if ( !set ) {
+        cout << "\nError: Memory allocation failed, exiting program." << endl;
+        exit(1);
+    }
+    setivar();//Sets initializing value
+    for ( int i = 0; i < psize; i++ )
+        set[i] = ivar;//sets each value to the initialized value
+    lsize = 0;
+    setsentinal();
+}
+/*template <class T>
+Set<T>::Set(Set &copyset, int x){//COPY CONSTRUCTOR
+    if ( x > 0 )//if user initializes psize in parenthesis
+        psize = x;
+    else
+        psize = DEFAULTSIZE;// otherwise use default value
+    set = new int[copyset.lsize];
+    if ( !set ) {
+        cout << "\nError: Memory allocation failed, exiting program." << endl;
+        exit(1);
+    }
+ 
+    for ( int i = 0; i < lsize; i++ )
+        set[i] = copyset.set[ i ];
+ 
+    lsize = copyset.lsize;
+}*/
+template<class T>
+Set<T>::~Set(){
+    //if (set)
+    //    delete [] set;
+    //set = NULL;
+}
+template <class T>
+void Set<T>::display(ostream & os){ //Display method
+    cout << "{";
+    for (int i=0; i<psize; i++){//loops through set
+        if(set[i]== sentinal){//if it = the sentinal value, the display method ends
+            break;
+        }
+        else{
+            if(i != lsize-1){
+                os << set[i] << ", ";//displays value if its not the sentinal
+            }
+            else{
+                os << set[i];
+            }
+
+        }
+    }
+    cout << "}" << endl;
+    cout <<"Logical Size: " <<lsize<<endl;
+    cout <<"Physical Size: " <<psize<<endl<<endl;;
+}
+template <class T>
+void Set<T>::input(istream &os){ //input method
+    
+    cout << "Enter up to " << psize << " elements or " << sentinal << " to signal end of input:" << endl;
+    bool validate;//used for loop
+    for ( int i = 0; i < psize; i++ ) {// loops through set
+        do{
+            validate=true;
+            os >> set[i];//input value for set
+            for(int k=0; k<i; k++){
+                if (set[k]==set[i]){//if inputed value is equal to anyother value in the set
+                    cout << "NO REPEATING VALUES! Enter another element"<<endl;
+                    validate=false;//sets validate = to false
+                    lsize = i;
+                }
+            }
+        }while (!validate); //if validate= false, it repeats
+        if ( set[ i ] == sentinal){
+            lsize = i;
+            break;
+        }
+    }
+}
+template <class T> //SETS SENTINAL VALUE FOR EACH DATA TYPE
+void Set<T>::setsentinal(){
+    sentinal=0;
+}
+template <>
+void Set<int>::setsentinal(){
+    sentinal=-999;
+}
+template <>
+void Set<char>::setsentinal(){
+    sentinal='0';
+}
+template <>
+void Set<double>::setsentinal(){
+    sentinal=0.0;
+}
+template <>
+void Set<string>::setsentinal(){
+    sentinal='0';
+}
+template <class T>
+void Set<T>::setivar(){//SETS Initial VALUE FOR EACH DATA TYPE
+    ivar=0;
+}
+template <>
+void Set<int>::setivar(){
+    ivar=0;
+}
+template <>
+void Set<char>::setivar(){
+    ivar=0;
+}
+template <>
+void Set<double>::setivar(){
+    ivar=0.0;
+}
+template <>
+void Set<string>::setivar(){
+    ivar='0';
+}
+template <class T>
+bool Set<T>::element ( T n ){//checks if element is in a set
+    bool validate = false;
+    for (int i=0; i<lsize; i++){//loop through set
+        if (set[i]==n){//if set[i] is equal to n
+            validate=true; //the value is in set[i]
+            break;
+        }
+    }
+    return validate;
+    
+}
+template <class T>
+Set<T> Set<T>::Union(Set Y){ //Union function
+    int x=lsize;
+    Set<T> X(psize+Y.psize);//Creates new set named X passing new physical size
+    for(int i=0; i <lsize; i++){ //Loops Through
+        X.set[i]=this->set[i];//Sets all ints in first Set to new Set
+        X.lsize=i+1;
+    }
+    for(int k=0; k<lsize+Y.lsize; k++){//loops through second set
+        if(!(X.element(Y.set[k]))){//if Y.set[k] is not in set X it adds it to the new set
+            X.set[x]=Y.set[k];
+            x++;
+        }
+        if(Y.set[k]==sentinal){
+            break;
+        }
+    }
+    X.lsize=x-1;
+    return(X); // Returns new set
+}
+template <class T>
+Set<T> Set<T>::Intersection(Set Y){//Intersection function
+    Set<T> X(psize+Y.psize);
+    int i=0;
+    for(int k=0; k<psize; k++){//loops through
+        if(Y.element(set[k])){//if its an element in set Y, it adds it to the new set
+            X.set[i]=set[k];
+            i++;
+            X.lsize=i;
+        }
+    }
+    X.set[i]=sentinal;
+    return(X); // Returns new set
+}
+template <class T>
+Set<T> Set<T>::Difference(Set Y){//Difference function
+    Set<T> X(psize);
+    int i=0;
+    for(int k=0; k<lsize; k++){
+        if(!(Y.element(set[k]))){ //if its not the other set
+            X.set[i]=set[k];// it adds it to the new set
+            i++;
+            X.lsize=i;
+        }
+    }
+    X.set[i]=sentinal;
+    return(X); // Returns new set
+}
+template <class T>
+Set<T> Set<T>::delelement(T n){//Deletes element
+    Set<T> X;//Creates Set X
+    bool validate=true;
+    if(element(n)){//if its an element in the set
+        for(int i=0; i<this->lsize+1; i++){//loops through
+            if(set[i]==n){//if n is = to set[i]
+                validate=false;// all it does it continue and sets validate to false
+                continue;
+            }
+            else if(validate){//if validate is true it adds the value to the set
+                X.set[i]=set[i];
+            }
+            else if(!validate){//if validate is false it adds teh value to the previous number in the set.
+                X.set[i-1]=set[i];
+            }
+        }
+        X.set[lsize]=sentinal;
+        return(X);
+    }
+    else{//if its not in the set it returns the original set
+        return(*this);
+    }
+}
+template <class T>
+Set<T> Set<T>::addelement(T n){// Adds element to the set
+    if(!(element(n))){//if its not in the set
+        int passlsize;
+        passlsize= lsize +1;
+        Set X(passlsize);//create new set
+        for(int y=0; y < this->lsize; y++){
+            X.set[y]=set[y];//set everything from old set equal to the new set
+        }
+        X.set[passlsize-1]=n;//sets new value to next in sequence
+        X.lsize=passlsize;
+        return (X);
+    }
+    else{
+        return(*this);
+    }
+}
+template <class T>//OVERLOADED OPERATORS
+Set<T> Set<T>::operator+(Set X){//Union
+    return (Union(X));
+}
+template <class T>
+Set<T> Set<T>::operator^(Set X){//intersection
+    return (Intersection(X));
+}
+template <class T>
+Set<T> Set<T>::operator-(Set X){//difference
+    return (Difference(X));
+}
+template <class T>
+Set<T> Set<T>:: operator+(T n){//add an element to the set
+    return (addelement(n));
+}
+template <class T>
+Set<T> Set<T>:: operator-(T n){//Remove element
+    return (delelement(n));
+}
+template <class T>
+bool Set<T>::operator==(Set X){//Equality
+    bool retstat=true;
+    for(int i=0; i <lsize; i++){
+        if(element(X.set[i])){
+            continue;
+        }
+        else{
+            retstat=false;
+        }
+    }
+    return(retstat);
+}
+]0;merendino@storm:~/CISC2000/template[merendino@storm template]$ g++ main/cp[K[K[K.cpp
+]0;merendino@storm:~/CISC2000/template[merendino@storm template]$ ./a.out
+Enter up to 10 elements or 0 to signal end of input:
+a
+b
+c
+d
+e
+
+f
+f
+NO REPEATING VALUES! Enter another element
+g
+h
+0
+Enter up to 10 elements or 0 to signal end of input:
+g
+h
+i
+j
+k
+l
+m
+no 
+i o
+0
+Set 1: {a, b, c, d, e, f, g, h}
+Logical Size: 8
+Physical Size: 10
+
+Set 2: {g, h, i, j, k, l, m, n, o}
+Logical Size: 9
+Physical Size: 10
+
+Union: {a, b, c, d, e, f, g, h, i, j, k, l, m, n, o}
+Logical Size: 15
+Physical Size: 20
+
+Intersection: {g, h}
+Logical Size: 2
+Physical Size: 20
+
+Difference (Set 1 - Set 2) {a, b, c, d, e, f}
+Logical Size: 6
+Physical Size: 10
+
+Add one interger to Set 1: i
+Set 1: {a, b, c, d, e, f, g, h, i}
+Logical Size: 9
+Physical Size: 9
+
+Input a set of Strings
+Enter up to 10 elements or 0 to signal end of input:
+Mario
+JOh  ohn
+Joseph
+Merenid d  dinoo 
+0
+Set of strings{Mario, John, Joseph, Merendino}
+Logical Size: 4
+Physical Size: 10
+
+]0;merendino@storm:~/CISC2000/template[merendino@storm template]$ exit
+exit
+
+Script done on Wed 02 Dec 2015 08:22:07 PM EST

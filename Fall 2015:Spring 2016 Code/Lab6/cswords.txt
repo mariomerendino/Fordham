@@ -1,0 +1,8 @@
+CPU heart of computer 
+GPU processor for graphics 
+jiffy quantum
+L1 faster memory in chip
+DMA directory memory access
+FIFO First In First Out
+Stack ADT container that is First-in-Last-Out
+Queue ADT container that is FIFO
